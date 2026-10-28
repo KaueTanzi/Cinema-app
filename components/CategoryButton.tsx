@@ -23,11 +23,47 @@ export default function CategoryButton({
         {selected && (
             <Entypo name="dot-single" size={16} color="#ffffff"></Entypo>
         )}
-            <Text>{title}</Text>
+            <Text style={[
+                styles.title,
+                selected ? styles.titleSelected :styles.titleUnSelected
+                ]}
+                >
+                {title}
+                </Text>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
-   
-})
+   button:{
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 9,
+    borderRadius: 24,
+    marginTop: 10,
+    
+   },
+   buttonSelected:{
+    backgroundColor: "#ff3366",
+    borderWidth: 1,
+    borderColor: "#ff4c7b",
+   },
+   buttonUnselected:{
+    backgroundColor: "#161a28",
+    borderWidth: 1,
+    borderColor: "#262d42",
+   },
+   title:{
+    fontSize: 13,
+    fontWeight: "700",
+   },
+   titleSelected:{
+    color:"#ffffff",
+   },
+   titleUnSelected:{
+    color:"#94a3b8"
+   }
+
+});
