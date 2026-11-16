@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Header from './components/Header';
 import SearchBar from './components/searchBar';
 import CategoryButton from './components/CategoryButton';
+import MovieCard from './components/MovieCard';
 
 
 export default function App() {
@@ -28,7 +29,16 @@ export default function App() {
         <Text style={styles.countTitle}>6 filmes</Text>  
       </View> 
     </View>  
-  
+
+    <View style={styles.sectionMovie}>
+      <MovieCard
+       
+        image={require('./assets/movies/vingadores-ultimato.jpg')}
+        title='Vingadores Ultimato'
+        category='Ação'
+        rating={4.9}
+        ></MovieCard>
+    </View>
   </View>
   );
 }
@@ -80,5 +90,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#94a3b8"
   },
+  sectionMovie:{
+    marginHorizontal: 20
+  }
 
 });
